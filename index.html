@@ -1,1 +1,53 @@
+<index.html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="24H">
+<meta name="theme-color" content="#0B0E14">
+<title>24H — Military Time</title>
+<style>
+  :root{
+    --ink:      #0B0E14;
+    --panel:    #131824;
+    --amber:    #FFA92B;
+    --amber-dim:#5C3F14;
+    --slate:    #6B7689;
+    --bone:     #E8E2D6;
+  }
 
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html,body{ height:100%; }
+
+  body{
+    background: var(--ink);
+    color: var(--bone);
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-variant-numeric: tabular-nums;
+    -webkit-user-select:none; user-select:none;
+    -webkit-touch-callout:none;
+    -webkit-tap-highlight-color:transparent;
+    overflow:hidden;
+    display:flex;
+  }
+
+  /* faint sodium-vapor glow behind the readout */
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    background: radial-gradient(60% 40% at 50% 42%, rgba(255,169,43,.10), transparent 70%);
+    pointer-events:none;
+  }
+
+  .shell{
+    position:relative;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    padding: calc(env(safe-area-inset-top) + 4vh) calc(env(safe-area-inset-right) + 20px)
+             calc(env(safe-area-inset-bottom) + 3vh) calc(env(safe-area-inset-left) + 20px);
